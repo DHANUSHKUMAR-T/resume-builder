@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Executive Resume</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+        padding: 40px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* Header */
+    .header {
+        border-bottom: 2px solid #c9a84c;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #1a1a2e;
+    }
+
+    .header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Sections */
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+        color: #1a1a2e;
+        border-bottom: 2px solid #c9a84c;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+
+    .item {
+        margin-bottom: 12px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .small {
+        font-size: 13px;
+        color: #555;
+    }
+
+    ul {
+        margin: 5px 0 0 20px;
+        padding: 0;
+    }
+
+    li {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    /* Editable */
+    [contenteditable="true"] {
+        outline: none;
+    }
+
+    [contenteditable="true"]:focus {
+        background: #fff8e1;
+        border-radius: 3px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="resume">
+
+    <!-- Header -->
+    <div class="header">
+        <h1 contenteditable="true">Your Name</h1>
+        <p contenteditable="true">Your Role</p>
+        <p contenteditable="true">Email | Phone | LinkedIn | Location</p>
+    </div>
+
+    <!-- Profile -->
+    <div class="section">
+        <h2>Profile</h2>
+        <p contenteditable="true">
+            Write a professional summary describing your experience, strengths, and career goals.
+        </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <h2>Experience</h2>
+
+        <div class="item">
+            <p class="bold" contenteditable="true">Company Name</p>
+            <p class="small" contenteditable="true">Role | Duration</p>
+            <ul contenteditable="true">
+                <li>Describe your work and achievements</li>
+                <li>Use measurable results</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <p class="bold" contenteditable="true">Company Name</p>
+            <p class="small" contenteditable="true">Role | Duration</p>
+            <ul contenteditable="true">
+                <li>Add another experience</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h2>Skills</h2>
+        <p contenteditable="true">
+            Python, Machine Learning, Flask, HTML, CSS, JavaScript
+        </p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2>Education</h2>
+        <p class="bold" contenteditable="true">University Name</p>
+        <p class="small" contenteditable="true">Degree | Year</p>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+        <h2>Projects</h2>
+
+        <div class="item">
+            <p class="bold" contenteditable="true">Project Name</p>
+            <p contenteditable="true">
+                Describe your project, tech stack, and impact.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

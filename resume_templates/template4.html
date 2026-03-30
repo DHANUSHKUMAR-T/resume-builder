@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Elegant Resume</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+        padding: 40px;
+        color: #222;
+    }
+
+    .container {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    /* Header */
+    .header {
+        border-left: 6px solid #7c3aed;
+        padding-left: 15px;
+        margin-bottom: 25px;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #111827;
+    }
+
+    .header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Sections */
+    .section {
+        margin-bottom: 25px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #111827;
+        position: relative;
+    }
+
+    /* Gradient underline */
+    .section h2::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 100%;
+        margin-top: 5px;
+        background: linear-gradient(to right, #7c3aed, #06b6d4);
+        border-radius: 2px;
+    }
+
+    .item {
+        margin-bottom: 12px;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        color: #666;
+    }
+
+    ul {
+        margin: 5px 0 0 20px;
+        padding: 0;
+    }
+
+    li {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    /* Skills */
+    .skills {
+        margin-top: 10px;
+    }
+
+    .skill {
+        display: inline-block;
+        background: linear-gradient(135deg, #7c3aed, #06b6d4);
+        color: white;
+        padding: 6px 12px;
+        margin: 5px 5px 0 0;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    /* Editable */
+    [contenteditable="true"]:focus {
+        background: #f3f4ff;
+        border-radius: 3px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="resume">
+
+    <!-- Header -->
+    <div class="header">
+        <h1 contenteditable="true">Your Name</h1>
+        <p contenteditable="true">Your Role</p>
+        <p contenteditable="true">Email | Phone | Location</p>
+    </div>
+
+    <!-- Profile -->
+    <div class="section">
+        <h2>Profile</h2>
+        <p contenteditable="true">
+            A motivated professional with experience in building scalable applications.
+        </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <h2>Experience</h2>
+
+        <div class="item">
+            <div class="title" contenteditable="true">Company Name</div>
+            <div class="subtitle" contenteditable="true">Role | Duration</div>
+            <ul contenteditable="true">
+                <li>Achieved measurable results</li>
+                <li>Improved system efficiency</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+        <h2>Projects</h2>
+
+        <div class="item">
+            <div class="title" contenteditable="true">Project Name</div>
+            <p contenteditable="true">
+                Built a project using Flask and ML.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <span class="skill" contenteditable="true">Python</span>
+            <span class="skill" contenteditable="true">Machine Learning</span>
+            <span class="skill" contenteditable="true">Flask</span>
+        </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="item">
+            <div class="title" contenteditable="true">University Name</div>
+            <div class="subtitle" contenteditable="true">Degree | Year</div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

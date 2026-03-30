@@ -1,0 +1,157 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0f1115;
+    color: #eaeaea;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Navbar */
+.navbar {
+    height: 60px;
+    background: #12141a;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c9a84c;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.btn-download {
+    background: #c9a84c;
+    color: #0a0a0f;
+}
+
+.btn-download:hover {
+    background: #e8c97a;
+}
+
+.btn-back {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ccc;
+}
+
+.btn-back:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Main Layout */
+.editor-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Left Panel (optional tools area) */
+.sidebar {
+    width: 250px;
+    background: #12141a;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #c9a84c;
+}
+
+.sidebar p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* Resume Preview Area */
+.editor-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+/* Paper Style */
+.resume-wrapper {
+    background: white;
+    width: 794px; /* A4 width in px */
+    min-height: 1123px; /* A4 height */
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border-radius: 6px;
+}
+
+/* Editable highlight */
+[contenteditable="true"] {
+    outline: none;
+    transition: 0.2s;
+}
+
+[contenteditable="true"]:hover {
+    background: rgba(201,168,76,0.1);
+    cursor: text;
+}
+
+[contenteditable="true"]:focus {
+    background: rgba(201,168,76,0.2);
+    border-radius: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .resume-wrapper {
+        width: 100%;
+        padding: 20px;
+    }
+}

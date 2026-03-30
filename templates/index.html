@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeForge – Build Your Resume</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">Resume<span>Forge</span></div>
+    <div class="nav-tag">Total {{ templates|length }} Templates</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>Your Resume,<br><em>Perfected.</em></h1>
+    <p>Choose a professional template, customize it, and download instantly.</p>
+</section>
+
+<!-- Gallery -->
+<section class="gallery-section">
+    <div class="section-label">Choose Your Template</div>
+
+    <div class="grid">
+
+        {% for t in templates %}
+        <div class="card" onclick="window.location='/editor/{{ t.id }}'">
+
+            <!-- Preview Image -->
+            <div class="card-preview">
+                <img src="{{ url_for('static', filename=t.img) }}" class="preview-img">
+                
+                {% if t.premium %}
+                <div class="premium-badge">Premium</div>
+                {% endif %}
+            </div>
+        
+            <!-- Overlay -->
+            <div class="card-overlay">
+                <button class="use-btn">
+                    {% if t.premium %}
+                        Unlock Premium
+                    {% else %}
+                        Use Template →
+                    {% endif %}
+                </button>
+            </div>
+        
+            <!-- Info -->
+            <div class="card-info">
+                <span class="card-name">{{ t.name }}</span>
+                <span class="card-tag">{{ t.tag }}</span>
+            </div>
+        
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    ResumeForge — Build · Edit · Download
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Editor</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">Resume<span>Forge</span></div>
+
+    <div class="actions">
+        <button class="btn btn-back" onclick="goBack()">← Back</button>
+        <button class="btn btn-download" onclick="downloadPDF()">Download PDF</button>
+        <button class="btn btn-back" onclick="resetResume()">Reset</button>
+    </div>
+</div>
+
+<!-- Main Layout -->
+<div class="editor-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Instructions</h3>
+        <p>Click on any text inside the resume to edit.</p>
+        <p>Use Ctrl + B / I / U for formatting.</p>
+        <p>Your changes are saved automatically.</p>
+        <p>Click "Download PDF" when you're done.</p>
+    </div>
+
+    <!-- Resume Preview -->
+    <div class="editor-main">
+        <div class="resume-wrapper" id="resume">
+            {{ content|safe }}
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/download.js') }}"></script>
+
+<script>
+    function goBack() {
+        window.location.href = "/";
+    }
+
+    function resetResume() {
+        localStorage.removeItem("resume_data");
+        location.reload();
+    }
+</script>
+
+</body>
+</html>

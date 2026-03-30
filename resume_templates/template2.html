@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Minimal Resume</title>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #333;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 30px;
+    }
+
+    /* Header */
+    .header {
+        border-left: 6px solid #4f46e5;
+        padding-left: 15px;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 30px;
+        color: #111827;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        color: #6366f1;
+        margin-top: 5px;
+    }
+
+    .contact {
+        font-size: 13px;
+        margin-top: 10px;
+        color: #555;
+    }
+
+    /* Sections */
+    .section {
+        margin-top: 25px;
+        padding-left: 10px;
+        border-left: 4px solid #6366f1;
+    }
+
+    .section h2 {
+        font-size: 16px;
+        color: #111827;
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    /* Gradient line under heading */
+    .section h2::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 100%;
+        margin-top: 5px;
+        background: linear-gradient(to right, #6366f1, #06b6d4);
+        border-radius: 2px;
+    }
+
+    .item {
+        margin-bottom: 12px;
+    }
+
+    .item-title {
+        font-weight: bold;
+        font-size: 14px;
+        color: #1f2937;
+    }
+
+    .item-sub {
+        font-size: 13px;
+        color: #6b7280;
+    }
+
+    .item-desc {
+        font-size: 13px;
+        margin-top: 3px;
+        line-height: 1.5;
+    }
+
+    /* Skills */
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .skill {
+        background: linear-gradient(135deg, #6366f1, #06b6d4);
+        color: white;
+        padding: 6px 12px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    /* Editable */
+    [contenteditable="true"] {
+        outline: none;
+    }
+
+    [contenteditable="true"]:focus {
+        background: #eef2ff;
+        border-radius: 3px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="resume">
+
+    <!-- Header -->
+    <div class="header">
+        <h1 contenteditable="true">Your Name</h1>
+        <div class="subtitle" contenteditable="true">Your Role / Title</div>
+        <div class="contact" contenteditable="true">
+            Email | Phone | LinkedIn | Portfolio
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="section">
+        <h2>Summary</h2>
+        <p contenteditable="true">
+            Briefly describe your professional background, strengths, and career goals.
+        </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <h2>Experience</h2>
+
+        <div class="item">
+            <div class="item-title" contenteditable="true">Company Name</div>
+            <div class="item-sub" contenteditable="true">Role | Duration</div>
+            <div class="item-desc" contenteditable="true">
+                • Describe your work and achievements<br>
+                • Focus on impact and results
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-title" contenteditable="true">Company Name</div>
+            <div class="item-sub" contenteditable="true">Role | Duration</div>
+            <div class="item-desc" contenteditable="true">
+                • Add another experience
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="item">
+            <div class="item-title" contenteditable="true">University Name</div>
+            <div class="item-sub" contenteditable="true">Degree | Year</div>
+        </div>
+
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <div class="skill" contenteditable="true">Python</div>
+            <div class="skill" contenteditable="true">Machine Learning</div>
+            <div class="skill" contenteditable="true">Flask</div>
+            <div class="skill" contenteditable="true">JavaScript</div>
+        </div>
+
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+        <h2>Projects</h2>
+
+        <div class="item">
+            <div class="item-title" contenteditable="true">Project Name</div>
+            <div class="item-desc" contenteditable="true">
+                Describe your project, tools used, and results.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
