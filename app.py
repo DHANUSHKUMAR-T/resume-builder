@@ -1,31 +1,10 @@
-from flask import Flask, render_template, request, send_file, jsonify
-from io import BytesIO
+from flask import Flask, render_template
 import os
-import pdfkit
 
 app = Flask(__name__)
 
-# 🔧 IMPORTANT: Set wkhtmltopdf path (CHANGE if needed)
-config = pdfkit.configuration(
-    wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-)
-
-# Template metadata
-TEMPLATES = [
-    {"id": 1, "name": "Executive Classic", "tag": "Professional", "img": "thumbnails/template1.png"},
-    {"id": 2, "name": "Modern Minimal", "tag": "Creative", "img": "thumbnails/template2.png"},
-    {"id": 3, "name": "Bold Impact", "tag": "Designer", "img": "thumbnails/template3.png"},
-    {"id": 4, "name": "Elegant Serif", "tag": "Academic", "img": "thumbnails/template4.png"},
-    {"id": 2, "name": "Modern Minimal", "tag": "Creative", "img": "thumbnails/template2.png"},
-    {"id": 1, "name": "Executive Classic", "tag": "Professional", "img": "thumbnails/template1.png"},
-    {"id": 3, "name": "Bold Impact", "tag": "Designer", "img": "thumbnails/template3.png"},
-    {"id": 4, "name": "Elegant Serif", "tag": "Academic", "img": "thumbnails/template4.png"},
-    {"id": 4, "name": "Elegant Serif", "tag": "Academic", "img": "thumbnails/template4.png"},
-    {"id": 2, "name": "Modern Minimal", "tag": "Creative", "img": "thumbnails/template2.png"},
-    {"id": 3, "name": "Bold Impact", "tag": "Designer", "img": "thumbnails/template3.png"},
-    {"id": 1, "name": "Executive Classic", "tag": "Professional", "img": "thumbnails/template1.png"},
-    
-]
+# ✅ Clean template list (NO duplicates)
+TEMPLATES = [ {"id": 1, "name": "Executive Classic", "tag": "Professional", "img": "thumbnails/template1.png"}, {"id": 2, "name": "Modern Minimal", "tag": "Creative", "img": "thumbnails/template2.png"}, {"id": 3, "name": "Bold Impact", "tag": "Designer", "img": "thumbnails/template3.png"}, {"id": 4, "name": "Elegant Serif", "tag": "Academic", "img": "thumbnails/template4.png"}, {"id": 2, "name": "Modern Minimal", "tag": "Creative", "img": "thumbnails/template2.png"}, {"id": 1, "name": "Executive Classic", "tag": "Professional", "img": "thumbnails/template1.png"}, {"id": 3, "name": "Bold Impact", "tag": "Designer", "img": "thumbnails/template3.png"}, {"id": 4, "name": "Elegant Serif", "tag": "Academic", "img": "thumbnails/template4.png"}, {"id": 4, "name": "Elegant Serif", "tag": "Academic", "img": "thumbnails/template4.png"}, {"id": 2, "name": "Modern Minimal", "tag": "Creative", "img": "thumbnails/template2.png"}, {"id": 3, "name": "Bold Impact", "tag": "Designer", "img": "thumbnails/template3.png"}, {"id": 1, "name": "Executive Classic", "tag": "Professional", "img": "thumbnails/template1.png"}, ]
 
 
 # Home page
@@ -48,44 +27,8 @@ def editor(template_id):
     return render_template('editor.html', content=content)
 
 
-# Download PDF using pdfkit
-@app.route('/download', methods=['POST'])
-def download():
-    try:
-        data = request.get_json()
-        html_content = data.get('html', '')
-
-        # Full HTML wrapper (IMPORTANT)
-        full_html = f"""
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <style>
-                body {{
-                    font-family: Arial, sans-serif;
-                    margin: 20px;
-                }}
-            </style>
-        </head>
-        <body>
-            {html_content}
-        </body>
-        </html>
-        """
-
-        # Generate PDF
-        pdf = pdfkit.from_string(full_html, False, configuration=config)
-
-        return send_file(
-            BytesIO(pdf),
-            mimetype='application/pdf',
-            as_attachment=True,
-            download_name='my_resume.pdf'
-        )
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+# ❌ REMOVE BACKEND PDF COMPLETELY
+# (Handled in frontend using html2pdf.js)
 
 
 # Run app
